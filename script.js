@@ -4,7 +4,6 @@ var generatePassword = {
     upperCase: true,
     numbers: true,
     special: true,
-    howMany: 5,
 
     //Function to generate pw
 generate: function () {
@@ -33,7 +32,4 @@ generate: function () {
     }
 }
 
-for (var i = 0; i < generatePassword.howMany; i++) {
-    generatePassword.generate();
-
-}
+generatePassword.generate();
