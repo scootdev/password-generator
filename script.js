@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var copyBtn = document.querySelector("#copy");
 
 // Write password to the #password input
 function writePassword() {
@@ -29,7 +30,7 @@ var generatePassword = {
       this.upperCase = confirm("Do you want uppercase letters?");
       this.numbers = confirm("Do you want numbers?");
       this.special = confirm("Do you want special characters?");
-      
+
       //Creating the character set based on users selections
       var charSet = "";
       var password = "";
@@ -68,3 +69,16 @@ var generatePassword = {
     }
   }
 }
+
+copyBtn.addEventListener("click", copyToClipboard);
+
+function copyToClipboard() {
+  var copyText = document.querySelector("#password");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+
+  document.execCommand("copy");
+}
+
+
